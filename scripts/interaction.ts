@@ -27,7 +27,7 @@ async function main() {
 
     console.log(`Best Web3Bridge Cohort X Mentor: ${pollCreationQuestion}`);
     console.log(`Candidates: ${votersOption.join(", ")}`);
-    console.log("Voting Result:", allVotes.map((vote, index) => `Option ${index + 1}: ${vote.toString()}`).join(", "));
+    // console.log("Voting Result:", allVotes.map((vote, index) => `Option ${index + 1}: ${vote.toString()}`).join(", "));
 }
 main().catch(error => {
     console.error(error);
