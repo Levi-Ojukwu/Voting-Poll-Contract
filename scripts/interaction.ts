@@ -20,14 +20,8 @@ async function main() {
     const pollResult = await VotingContract.getPoll(0);
 
     console.log(pollResult)
-
-   
-
-    // const [pollCreationQuestion, votersOption, allVotes] = pollResult;
-
     console.log(`Best Web3Bridge Cohort X Mentor: ${pollCreationQuestion}`);
     console.log(`Candidates: ${votersOption.join(", ")}`);
-    // console.log("Voting Result:", allVotes.map((vote, index) => `Option ${index + 1}: ${vote.toString()}`).join(", "));
 }
 main().catch(error => {
     console.error(error);
