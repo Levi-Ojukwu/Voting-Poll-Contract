@@ -2,6 +2,8 @@
 
 pragma solidity ^0.8.24;
 
+import "./IVoting.sol";
+
 contract Voting {
 
     struct Poll {
@@ -47,17 +49,17 @@ contract Voting {
         emit VotedSuccessfully(_pollId, msg.sender, _option);
     }
 
-    function getPoll (uint _pollId) public view returns (string memory _question, string[] memory _options, uint[] memory _votes) {
+    function getPoll(uint _pollId) public view returns (string memory _question, string[] memory _options, uint[] memory _votes) {
         require(_pollId < polls.length, "Poll does not exist.");
 
         Poll storage poll = polls[_pollId];
         uint optionCount = poll.option.length;
-        _votes = new uint[](optionCount);
+        _votes = new uint[] (optionCount);
 
         for(uint i = 0; i < optionCount; i++) {
             _votes[i] = poll.votes[i];
 
-            return(poll.question, poll.option, _votes);
         }
+            return(poll.question, poll.option, _votes);
     }
 }
